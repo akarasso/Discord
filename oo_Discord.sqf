@@ -28,7 +28,12 @@ CLASS("oo_Discord")
 			};
 			true;		  
 		};
-		hint "Request complete";
+		if ((_res select 0) isEqualTo "complete") then {
+			hint "Message sent";
+		};
+		if ((_res select 0) isEqualTo "timeout") then {
+			hint "Message timeout";
+		};		
 	};
 
 ENDCLASS;
